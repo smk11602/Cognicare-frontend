@@ -69,7 +69,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'name'
                     ? stopListening
@@ -89,7 +89,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'age'
                     ? stopListening
@@ -109,7 +109,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'address'
                     ? stopListening
@@ -129,7 +129,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'phone'
                     ? stopListening
@@ -143,9 +143,9 @@ function MyPage({ userInfo, updateUserInfo }) {
         ) : (
           <>
             <p>이름 : {info.name}</p>
-            <p>나이 : {info.age}</p>
-            <p>집 주소 : {info.address}</p>
-            <p>전화번호 : {info.phone}</p>
+            <p style={{ marginTop: '10px' }}>나이 : {info.age}</p>
+            <p style={{ marginTop: '10px' }}>집 주소 : {info.address}</p>
+            <p style={{ marginTop: '10px' }}>전화번호 : {info.phone}</p>
           </>
         )}
       </div>
@@ -154,7 +154,7 @@ function MyPage({ userInfo, updateUserInfo }) {
         {isEditing ? (
           <>
             <label>
-              고향:
+              고향 :     
               <input
                 type="text"
                 name="hometown"
@@ -163,7 +163,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'hometown'
                     ? stopListening
@@ -174,7 +174,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               </Button>
             </label>
             <label>
-              첫째 자녀 이름 :
+              첫째 자녀 :
               <input
                 type="text"
                 name="child1"
@@ -183,7 +183,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'child1'
                     ? stopListening
@@ -194,7 +194,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               </Button>
             </label>
             <label>
-              둘째 자녀 이름 :
+              둘째 자녀 :
               <input
                 type="text"
                 name="child2"
@@ -203,7 +203,7 @@ function MyPage({ userInfo, updateUserInfo }) {
               />
               <Button
                 variant="contained"
-                sx={{ backgroundColor: 'purple', '&:hover': { backgroundColor: 'darkorchid' } }}
+                sx={{ backgroundColor: 'green', '&:hover': { backgroundColor: 'black' } }}
                 onClick={
                   listening && listeningField === 'child2'
                     ? stopListening
@@ -217,12 +217,13 @@ function MyPage({ userInfo, updateUserInfo }) {
         ) : (
           <>
             <p>고향 : {info.hometown}</p>
-            <p>첫째 자녀 이름 : {info.child1}</p>
-            <p>둘째 자녀 이름 : {info.child2}</p>
+            <p style={{ marginTop: '10px' }}>첫째 자녀 : {info.child1}</p>
+            <p style={{ marginTop: '10px' }}>둘째 자녀 : {info.child2}</p>
           </>
         )}
         <div className='editButton'>
-          <Button variant="contained" sx={{ backgroundColor: 'black', '&:hover': { backgroundColor: 'darkgreen' } }} onClick={() => (isEditing ? handleSave() : setIsEditing(true))}>
+          <Button variant="contained" sx={{ backgroundColor: 'black', '&:hover': { backgroundColor: 'darkgreen' } }}
+           onClick={() => (isEditing ? handleSave() : setIsEditing(true))}>
             {isEditing ? '저장하기' : '수정하기'}
           </Button>
         </div>

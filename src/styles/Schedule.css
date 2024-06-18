@@ -171,6 +171,7 @@ h3 {
   margin-top: 10px;
   border: 1px solid #000000;
   font-size: 20px;
+  font-weight: bold;
   transition: background 0.3s;
 }
 

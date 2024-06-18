@@ -1,101 +1,104 @@
 .my-page {
-    color: rgb(255, 253, 253);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 0 auto;
-    min-height: 800px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  .info-section {
-    margin-bottom: 30px;
-    font-weight: bold;
-  }
-  
+  color: rgb(255, 253, 253);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  min-height: 800px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.info-section {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+
+label {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+  justify-content: end; /* 우측 정렬 */
+  margin-bottom: 10px;
+}
+
+input {
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-weight: bold;
+  flex-grow: 1;
+  margin-left: 20px; /* 라벨과의 간격 조정 */
+}
+
+p {
+  font-size: 18px;
+  background-color: white;
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  margin-left: 20px; /* 라벨과의 간격 조정 */
+  margin: 0;
+}
+
+.editButton {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+/* MUI Button 기본 스타일 재정의 */
+.MuiButton-contained {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
   label {
-    display: flex;
-    font-size: 18px;
-    font-weight: bold;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    font-size: 15px;
   }
-  
-  input {
-    font-size: 18px;
-    /* width: 52%; */
-    padding: 8px;
-    margin-left: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-  }
-  
-  .editButton {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 25px;
-  }
-  
-  /* MUI Button 기본 스타일 재정의 */
-  .MuiButton-contained {
-    background-color: #007bff;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-  
-  .MuiButton-contained:hover {
-    background-color: #ff781e;
-  }
-  
-  p {
-    margin: 20px 10px;
-    font-size: 20px;
-  }
-  
-  .info-section{
-    margin-bottom: 40px;
+  h1 {
+    font-size: 2em;
   }
 
-  @media (max-width: 768px) {
-    label {
-      font-size: 15px;
-    }
-    h1 {
-      font-size: 2em;
-    }
-    
-    input {
-      font-size: 14px;
-    }
-    button {
-      width : 33px;
-    }
+  input {
+    font-size: 14px;
   }
-  
-  @media (max-width: 480px) {
-    label {
-      font-size: 11px;
-    }
-    
-    input {
-      font-size: 10px;
-    }
-    button {
-      width : 25px;
-    }
-    h1 {
-      font-size: 1.7em;
-    }
+  button {
+    width: 33px;
   }
+}
+
+@media (max-width: 480px) {
+  label {
+    font-size: 11px;
+  }
+
+  input {
+    font-size: 10px;
+  }
+  button {
+    width: 25px;
+  }
+  h1 {
+    font-size: 1.7em;
+  }
+}

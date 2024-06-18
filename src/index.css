@@ -15,7 +15,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 body{
-  background-color: hwb(54 31% 2% / 0.87);
+  background-color: hwb(54 31% 2% / 0.842);
 
   background-position: center center; /* 이미지를 화면 중앙에 위치 */
   margin-left : 120px;
