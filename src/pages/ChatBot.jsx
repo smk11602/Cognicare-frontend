@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
@@ -10,7 +10,8 @@ const recognition = new SpeechRecognition();
 
 const questions = [
   { question: '오늘도 기억을 지키러 와주셔서 기뻐요 :) 성함이 어떻게 되시나요?', key: 'name' },
-  { question: '네! {name}님, 다음 질문으로 넘어가볼게요! 현재 어디에 거주하시나요?', key: 'address' },
+  { question: '네! {name}님, 연세가 어떻게 되세요?', key: 'age' },
+  { question: ' 다음 질문으로 넘어가볼게요! 현재 어디에 거주하시나요?', key: 'address' },
   { question: '잘하셨네요! 본인의 전화번호는 무엇인가요?', key: 'phone' },
   { question: '정답입니다:-) 태어난 고향은 어디셨나요?', key: 'hometown' },
   { question: '좋습니다. 첫째 자녀분의 성함은?', key: 'child1' },
@@ -18,12 +19,11 @@ const questions = [
 ];
 
 function ChatBot({ userInfo }) {
-  const [messages, setMessages] = useState([
-    { text: questions[0].question, sender: 'bot' }
-  ]);
+  const [messages, setMessages] = useState([{ text: questions[0].question, sender: 'bot' }]);
   const [input, setInput] = useState('');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [listening, setListening] = useState(false);
+  const messagesEndRef = useRef(null);
 
   useEffect(() => {
     recognition.continuous = false;
@@ -43,6 +43,10 @@ function ChatBot({ userInfo }) {
       setInput(transcript);
     };
   }, []);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
   const handleSendMessage = () => {
     if (input.trim() === '') return;
@@ -100,6 +104,7 @@ function ChatBot({ userInfo }) {
               </div>
             </div>
           ))}
+          <div ref={messagesEndRef} />
         </div>
         <div className="chatbot-input">
           <TextField
