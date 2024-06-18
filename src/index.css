@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0, 0.87);
   background-image: url('/assets/butterfly.gif'); /* public 폴더를 기준으로 경로 지정 */
   background-position: center center; /* 이미지를 화면 중앙에 위치 */
   background-size: cover; /* 이미지를 화면에 맞게 조정 */
@@ -16,7 +16,6 @@
 }
 body{
   background-color: hwb(54 31% 2% / 0.842);
-
   background-position: center center; /* 이미지를 화면 중앙에 위치 */
   margin-left : 120px;
   margin-top: 60px;

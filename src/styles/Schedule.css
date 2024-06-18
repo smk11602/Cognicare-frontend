@@ -84,18 +84,18 @@ nav {
 .custom-calendar .react-calendar__tile--now:enabled:hover,
 .custom-calendar .react-calendar__tile--now:enabled:focus {
   background: #ffffff;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .custom-calendar .react-calendar__tile--active {
-  background: #000000;
-  color: white;
+  background: #82fd77;
+  color: rgb(0, 0, 0);
 }
 
 .custom-calendar .react-calendar__tile--active:enabled:hover,
 .custom-calendar .react-calendar__tile--active:enabled:focus {
-  background: #000000;
-  color: white;
+  background: #4df878;
+  color: rgb(0, 0, 0);
 }
 
 .custom-calendar .highlight {
@@ -134,7 +134,8 @@ nav {
 .schedule-details .schedule-item span {
   margin-left: 10px;
   flex-grow: 1;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .schedule-details .schedule-item .checked {

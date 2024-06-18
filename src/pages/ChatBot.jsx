@@ -11,10 +11,10 @@ const recognition = new SpeechRecognition();
 const questions = [
   { question: '오늘도 기억을 지키러 와주셔서 기뻐요 :) 성함이 어떻게 되시나요?', key: 'name' },
   { question: '네! {name}님, 다음 질문으로 넘어가볼게요! 현재 어디에 거주하시나요?', key: 'address' },
-  { question: '잘하셨네요! {name}님의 전화번호는 무엇인가요?', key: 'phone' },
-  { question: '정답입니다:-) {name}님의 고향은 어디였죠?', key: 'hometown' },
-  { question: '좋습니다.  첫째 자녀의 이름은?', key: 'child1' },
-  { question: '좋아요. 그렇다면 둘째 자녀의 이름은?', key: 'child2' }
+  { question: '잘하셨네요! 본인의 전화번호는 무엇인가요?', key: 'phone' },
+  { question: '정답입니다:-) 태어난 고향은 어디셨나요?', key: 'hometown' },
+  { question: '좋습니다. 첫째 자녀분의 성함은?', key: 'child1' },
+  { question: '아주 잘하셨어요. 그렇다면 둘째 자녀분 성함은?', key: 'child2' }
 ];
 
 function ChatBot({ userInfo }) {
