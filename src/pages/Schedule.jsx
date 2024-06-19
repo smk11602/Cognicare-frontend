@@ -2,12 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import '../styles/Schedule.css';
+import trashIcon from '/assets/trash.png';
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
 function Schedule() {
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(new Date()); 
   const [selectedDate, setSelectedDate] = useState(null);
   const [scheduleItems, setScheduleItems] = useState([]);
   const [newSchedule, setNewSchedule] = useState('');
@@ -100,6 +101,20 @@ function Schedule() {
     localStorage.setItem(selectedDate.toDateString(), JSON.stringify(updatedItems));
   };
 
+  const deleteScheduleItem = (index) => {
+    const updatedItems = scheduleItems.filter((_, i) => i !== index);
+    setScheduleItems(updatedItems);
+    localStorage.setItem(selectedDate.toDateString(), JSON.stringify(updatedItems));
+    
+    // Update highlighted dates if necessary
+    if (updatedItems.length === 0) {
+      const remainingDates = highlightedDates.filter(
+        (date) => date.toDateString() !== selectedDate.toDateString()
+      );
+      setHighlightedDates(remainingDates);
+    }
+  };
+
   const handleDayClick = (value) => {
     setSelectedDate(value);
   };
@@ -165,6 +180,12 @@ function Schedule() {
                     onChange={() => toggleChecked(index)}
                   />
                   <span className={item.checked ? 'checked' : ''}>{item.text}</span>
+                  <img
+                    src={trashIcon}
+                    alt="삭제"
+                    className="delete-icon"
+                    onClick={() => deleteScheduleItem(index)}
+                  />
                 </div>
               ))}
             </div>

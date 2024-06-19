@@ -10,6 +10,13 @@ nav {
   border-bottom: 1px solid #ddd;
 }
 
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
 .name {
   display: flex;
   justify-content: center;
@@ -134,7 +141,7 @@ nav {
 .schedule-details .schedule-item span {
   margin-left: 10px;
   flex-grow: 1;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
 }
 
